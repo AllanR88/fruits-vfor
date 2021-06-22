@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="styles2.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <div class="split left imageChanger" :style="{ backgroundImage: 'url(' + imagefond + ')' }">
+
+    </div>
+
+    <div class="split right">
+        <div :style="{height:100/fruits.length + 'vh', lineHeight:100/fruits.length +'vh'}" v-for="fruit in fruits" class="boutonFruits" @mouseover="imagefond = fruit.image" @mouseout="imagefond = 'all-fruits.jpg'">{{fruit.text}}
+
+
+    </div>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+
+            imagefond: 'all-fruits.jpg',
+            fruits: [
+
+                {text: "Orange", image: "orange.jpg"},
+                {text: "Kiwi", image: "kiwi.jpg"},
+                {text: "Banane", image: "banane.jpg"},
+                {text: "Cerise", image: "cerise.jpg"},
+                {text: "Peche", image: "peche.jpg"}
+            ],
+
+        },
+        computed: {}
+    })
+</script>
+</body>
+</html>
